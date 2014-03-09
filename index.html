@@ -2,40 +2,31 @@
   <html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>Birthday calculator</title>
 
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="bootstrap-datepicker.js"> </script>
-
+    
     <link rel="stylesheet" href="date.css">
-
     <link rel="stylesheet" href="datepicker.css">
-
     <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
- 
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
-    
-    
-    
+  
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46659221-1']);
+    _gaq.push(['_trackPageview']);
 
-    <script src="bower_components/momentjs/min/moment.min.js"></script>
-
-    <script src="diff.js"></script>
-
-    <script src="script.js"></script>
-
-
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>  
+  
   </head>
   <body>
 
@@ -43,7 +34,6 @@
 
     <div ng-controller="TimeCtrl">
 
-       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
           <h1>Hi {{ (name)|| "there" }}! </h1>
@@ -52,7 +42,7 @@
 
             
           </p>
-          <p>Congratulations! You have been living <b>{{ difference() }}</b> so far. 
+          <p>Congratulations! You have been living <b>{{ difference() }}</b> so far.<br/> 
             That's  {{ differenceInWeeks() }}  weeks or {{ differenceInDays() }} days.
           </p>
           
@@ -61,7 +51,6 @@
       </div>
 
       <div class="container">
-        <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4">
             <h2>18th birthday</h2>
@@ -114,8 +103,6 @@
           </div>
         </div>       
 
-      
-
       </div>
       
       <hr>
@@ -125,8 +112,16 @@
       </footer>
        
     </div>
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="bootstrap-datepicker.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.1/angular.min.js"></script>
+    <script src="bower_components/momentjs/min/moment.min.js"></script>
+    <script src="diff.js"></script>
+    <script src="script.js"></script>
+
     
   </body>
   </html>
-
-
