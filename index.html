@@ -46,13 +46,15 @@
        <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1>Hi there!</h1>
+          <h1>Hi {{ (name)|| "there" }}! </h1>
           <p>Your date of birth is 
             <input type="text" class="span2" id="dp1" ng-model="model.date">
 
             
           </p>
-          <p>Congratulations! You have been living {{ difference() }} so far.</p>
+          <p>Congratulations! You have been living <b>{{ difference() }}</b> so far. 
+            That's  {{ differenceInWeeks() }}  weeks or {{ differenceInDays() }} days.
+          </p>
           
           
         </div>
@@ -62,18 +64,52 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4">
-            <h2>30th birthday</h2>
-            <p>{{ till(30) }} left.</p>
-            
+            <h2>18th birthday</h2>
+              <p>Celebration: <b>{{ moreOrLess(18) }}.</b></p>
+                <p>To be precise, {{ till(18) }}.
+              </p>
+              <p>So more or less in {{ moreOrLessInWeeks(18) }} weeks.</p>
           </div>
           <div class="col-md-4">
-            <h2>50th birthday</h2>
-            <p>{{ till(50) }} left.</p>
+            <h2>30th birthday</h2>
+              <p>Celebration: <b>{{ moreOrLess(30) }}.</b></p>
+                <p>To be precise, {{ till(30) }}.
+              </p>
+              <p>So more or less in {{ moreOrLessInWeeks(30) }} weeks.</p>
             
          </div>
           <div class="col-md-4">
-            <h2>80th birthday</h2>
-            <p>{{ till(80) }} left.</p>
+            <h2>40th birthday</h2>
+              <p>Celebration: <b>{{ moreOrLess(40) }}.</b></p>
+                <p>To be precise, {{ till(40) }}.
+              </p>
+              <p>So more or less in {{ moreOrLessInWeeks(40) }} weeks.</p>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h2>50th birthday</h2>
+              <p>Celebration: <b>{{ moreOrLess(50) }}.</b></p>
+                <p>To be precise, {{ till(50) }}.
+              </p>
+              <p>So more or less in {{ moreOrLessInWeeks(50) }} weeks.</p>
+          </div>
+          <div class="col-md-4">
+            <h2>60th birthday</h2>
+              <p>Celebration: <b>{{ moreOrLess(60) }}.</b></p>
+                <p>To be precise, {{ till(60) }}.
+              </p>
+              <p>So more or less in {{ moreOrLessInWeeks(60) }} weeks.</p>
+            
+          </div>
+          
+          <div class="col-md-4">
+            <h2>70th birthday</h2>
+              <p>Celebration: <b>{{ moreOrLess(70) }}.</b></p>
+                <p>To be precise, {{ till(70) }}.
+              </p>
+              <p>So more or less in {{ moreOrLessInWeeks(70) }} weeks.</p>
             
           </div>
         </div>       
@@ -81,7 +117,12 @@
       
 
       </div>
+      
+      <hr>
 
+      <footer>
+        <p>&copy; <a href="https://github.com/dziemid">Greg Dziemidowicz</a> 2014</p>
+      </footer>
        
     </div>
     
