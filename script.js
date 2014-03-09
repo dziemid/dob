@@ -12,7 +12,12 @@ var myAppModule = angular.module('app', [])
 
 myAppModule.controller('TimeCtrl', function($scope, $location) {
 
-  
+  var dateFormat = "MM-DD-YYYY";
+
+  var pickedDate =  function() {
+    return moment($scope.model.date, dateFormat);
+  }
+
   $scope.model = {
     "date": ( $location.search().dob  ) || "08-16-1986"
   }
@@ -21,19 +26,14 @@ myAppModule.controller('TimeCtrl', function($scope, $location) {
   
 
   $scope.difference = function() {
-    
-    var pickedDate =  moment($scope.model.date);
-    
     var now = new Date();
-    var diff = moment.preciseDiff(now.toLocaleDateString(), pickedDate)
+    var diff = moment.preciseDiff(now.toLocaleDateString(), pickedDate())
     return diff;
   }
 
   var diffrenceInGeneral = function() {
-    var pickedDate =  moment($scope.model.date);
-    
     var now = moment(new Date().toLocaleDateString());
-    return moment.duration(now.diff(pickedDate));
+    return moment.duration(now.diff(pickedDate()));
   }
 
   $scope.differenceInDays = function() {
@@ -46,9 +46,7 @@ myAppModule.controller('TimeCtrl', function($scope, $location) {
   }
 
   $scope.till = function(value) {
-    
-    var pickedDate =  moment($scope.model.date);
-    var otherDate = pickedDate.add('years', value);
+    var otherDate = pickedDate().add('years', value);
     var now = new Date();
 
     var diff = moment.preciseDiff(now.toLocaleDateString(), otherDate)
@@ -56,19 +54,13 @@ myAppModule.controller('TimeCtrl', function($scope, $location) {
   }
 
   $scope.moreOrLess = function(value) {
-    
-    var pickedDate =  moment($scope.model.date);
-    var otherDate = pickedDate.add('years', value);
+    var otherDate = pickedDate().add('years', value);
     return otherDate.fromNow();
   }
 
   $scope.moreOrLessInWeeks = function(value) {
-    
-    var pickedDate =  moment($scope.model.date);
-    var otherDate = pickedDate.add('years', value);
-
+    var otherDate = pickedDate().add('years', value);
     var now = moment(new Date().toLocaleDateString());
-
     return Math.round(moment.duration(otherDate.diff(now)).asWeeks());
   }
 
