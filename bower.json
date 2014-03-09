@@ -1,0 +1,25 @@
+{
+  "name": "LifeDates",
+  "version": "0.0.0",
+  "authors": [
+    "Greg Dziemidowicz <greg@cogent.co>"
+  ],
+  "description": "Calculate time in life",
+  "main": "dates.js",
+  "keywords": [
+    "date"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "momentjs": "~2.5.1",
+    "angular-ui-date": "latest"
+  }
+}
