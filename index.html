@@ -15,19 +15,46 @@
 
 
   <script src="bower_components/momentjs/min/moment.min.js"></script>
+  <script src="diff.js"></script>
   <script src="script.js"></script>
 </head>
 <body>
 
   <div ng-controller="TimeCtrl">
-    <input type="text" ng-model="todoText"  size="30" placeholder="add new todo here">
-
-    <input ui-date="dateOptions" name="DateOfBirth">
-
+    
     <div>
-      Difference between NOW and DOB: {{ difference }}
+      <div>
+      Difference between NOW and DOB: {{ difference() }}
+      </div>
+      
+      <div>
+      Difference between NOW and 60: {{ till(60) }}
+      </div>
+      
+
+      <div>
+      Difference between NOW and 50: {{ till(50) }}
+      </div>
+      
+      <div>
+      Difference between NOW and 40: {{ till(40) }}
+      </div>
+      <div>
+      Difference between NOW and 30: {{ till(30) }}
+      </div>
+      <div>
+      Difference between NOW and 20: {{ till(20) }}
+      </div>
+
+
 
     </div>
+
+      <div>
+
+    <input ui-date ui-date-format="d MM, yy" ng-model="model.date" >
+    </div>
+  
   </div>                 
 
   Hello world!
