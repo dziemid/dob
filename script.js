@@ -1,8 +1,18 @@
-var myAppModule = angular.module('app', ['ui.date'])
+$(function(){
+  var input = $('#dp1');
+  input.datepicker({
+          format: 'mm-dd-yyyy'
+        }).on('changeDate', function(ev){
+          input.trigger('input');
+        });
+  
+});
+
+var myAppModule = angular.module('app', [])
 
 myAppModule.controller('TimeCtrl', function($scope) {
   $scope.model = {
-    "date": "16 August, 1986"
+    "date": "08-16-1986"
   }
   $scope.todoText = "Angular works";
   
@@ -11,7 +21,7 @@ myAppModule.controller('TimeCtrl', function($scope) {
     var pickedDate =  moment($scope.model.date);
     
     var now = new Date();
-    var diff = moment.preciseDiff(now.toLocaleDateString()  ,pickedDate)
+    var diff = moment.preciseDiff(now.toLocaleDateString(), pickedDate)
     return diff;
   }
 
@@ -19,7 +29,6 @@ myAppModule.controller('TimeCtrl', function($scope) {
     
     var pickedDate =  moment($scope.model.date);
     var forty = pickedDate.add('years', value);
-    console.log(forty);
     var now = new Date();
 
     var diff = moment.preciseDiff(now.toLocaleDateString(), forty)
